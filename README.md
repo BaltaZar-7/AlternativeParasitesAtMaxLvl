@@ -6,7 +6,7 @@ This mod is adding the Intestinal Parasites RISK to the player after reaching co
 - Fixed mode: After you eat once, 1% chance, but you can eat any amount after that, it stays on 1%  
 There is also a new QOL feature, which is a notification that another dose of medication can be taken for the real Intestinal Parasites (not the risk). In other words the 24 hours timer elapsed. This reminder can be turned off via ModSettings.    
 # Installation
-Download and install dependancy mod: ModSettings 
+Download and install dependancy mod: ModSettings  
 Download and place the dll file into your \Mods folder.  
 # Thank you for downloading!
 Mod for The Long Dark game created by Hinterland Studios  
