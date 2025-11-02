@@ -17,9 +17,6 @@ namespace TLD_Skill_Adjustment
 
             TLD_Settings.OnLoad();
 
-            HarmonyLib.Harmony harmony = new HarmonyLib.Harmony("com.baltazar.cookingparasiterisk");
-            harmony.PatchAll();
-
             if (debug)
                 MelonLogger.Msg("[DEBUG] Debug mode active.");
 
@@ -68,7 +65,7 @@ namespace TLD_Skill_Adjustment
                     return;
                 }
 
-                var cookingSkill = GameManager.GetSkillCooking();
+                Skill_Cooking cookingSkill = GameManager.GetSkillCooking();
                 int cookingLevel = cookingSkill.GetCurrentTierNumber();
                 DebugLog($"[AlternativeParasitesAtMaxLvl] Cooking level: {cookingLevel}");
 
