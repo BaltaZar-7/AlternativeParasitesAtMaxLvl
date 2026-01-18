@@ -1,4 +1,6 @@
-﻿using ModSettings;
+﻿#nullable disable
+
+using ModSettings;
 
 namespace TLD_Skill_Adjustment
 {

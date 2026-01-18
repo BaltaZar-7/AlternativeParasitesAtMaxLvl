@@ -4,6 +4,7 @@
     <PropertyGroup>
         <!--This needs to be changed for the mod to compile.-->
         <TheLongDarkPath>D:\SteamLibrary\steamapps\common\TheLongDark</TheLongDarkPath>
+        <Platforms>AnyCPU;x64</Platforms>
     </PropertyGroup>
 
     <PropertyGroup>
