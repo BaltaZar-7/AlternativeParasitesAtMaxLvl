@@ -15,3 +15,4 @@ Download and place the dll file into your \Mods folder.
 Mod for The Long Dark game created by Hinterland Studios  
 Modtemplate by Digitalzombie  
 Made by BaltaZar  
+[![Github All Releases](https://img.shields.io/github/downloads/BaltaZar-7/AlternativeParasitesAtMaxLvl/total.svg)]()
