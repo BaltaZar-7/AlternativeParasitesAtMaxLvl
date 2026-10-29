@@ -1,11 +1,10 @@
-﻿#nullable disable
-
+#nullable disable
 using HarmonyLib;
 using Il2Cpp;
 using MelonLoader;
 using UnityEngine;
 
-namespace TLD_Skill_Adjustment
+namespace AlternativeParasitesAtMaxLvl
 {
     [HarmonyPatch(typeof(IntestinalParasites), "Update")]
     internal static class ParasiteAntibioticReminder
@@ -22,7 +21,7 @@ namespace TLD_Skill_Adjustment
         {
             try
             {
-                if (!TLD_Settings.Instance.EnableAntibioticReminder)
+                if (!ParasitesSettings.Instance.EnableAntibioticReminder)
                     return;
 
                 if (__instance == null)

@@ -3,7 +3,7 @@
 
     <PropertyGroup>
         <!--This needs to be changed for the mod to compile.-->
-        <TheLongDarkPath>D:\SteamLibrary\steamapps\common\TheLongDark</TheLongDarkPath>
+        <TheLongDarkPath>G:\SteamLibrary\steamapps\common\TheLongDark</TheLongDarkPath>
         <Platforms>AnyCPU;x64</Platforms>
     </PropertyGroup>
 
@@ -45,17 +45,14 @@
             <Private>False</Private>
         </Reference>
     </ItemDefinitionGroup>
-    <ItemGroup>
-      <Compile Remove="ParasiteRiskManager.cs" />
-    </ItemGroup>
 
     <!--This is the list of assemblies that the mod references. Most of these are unnecessary for normal mods, but are included here for completeness.-->
     <ItemGroup>
         <Reference Include="Il2CppInterop.Common">
-          <HintPath>D:\SteamLibrary\steamapps\common\TheLongDark\MelonLoader\net6\Il2CppInterop.Common.dll</HintPath>
+          <HintPath>G:\SteamLibrary\steamapps\common\TheLongDark\MelonLoader\net6\Il2CppInterop.Common.dll</HintPath>
         </Reference>
         <Reference Include="Il2CppInterop.Runtime">
-          <HintPath>D:\SteamLibrary\steamapps\common\TheLongDark\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
+          <HintPath>G:\SteamLibrary\steamapps\common\TheLongDark\MelonLoader\net6\Il2CppInterop.Runtime.dll</HintPath>
         </Reference>
         <Reference Include="MelonLoader" />
         <Reference Include="0Harmony" />
@@ -84,7 +81,7 @@
         <Reference Include="Il2CppTLD.Trial" />
         <Reference Include="Il2CppTLD.UserGeneratedContent" />
         <Reference Include="ModSettings">
-          <HintPath>D:\SteamLibrary\steamapps\common\TheLongDark\Mods\ModSettings.dll</HintPath>
+          <HintPath>G:\SteamLibrary\steamapps\common\TheLongDark\Mods\ModSettings.dll</HintPath>
         </Reference>
         <Reference Include="Unity.Mathematics" />
         <Reference Include="Unity.TextMeshPro" />

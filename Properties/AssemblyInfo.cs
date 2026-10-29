@@ -1,7 +1,6 @@
 using MelonLoader;
 using System.Reflection;
 using System.Runtime.InteropServices;
-using TLD_Skill_Adjustment;
 
 //This is a C# comment. Comments have no impact on compilation.
 
@@ -13,9 +12,9 @@ using TLD_Skill_Adjustment;
 //Version numbers in C# are a set of 1 to 4 positive integers separated by periods.
 //Mods typically use 3 numbers. For example: 1.2.1
 //The mod version need specified in three places.
-[assembly: AssemblyVersion("1.2.0")]
-[assembly: AssemblyFileVersion("1.2.0")]
-[assembly: MelonInfo(typeof(CookingParasiteRiskMod), "AlternativeParasitesAtMaxLvl", "1.2.0", "BaltaZar", null)]
+[assembly: AssemblyVersion("1.3.0")]
+[assembly: AssemblyFileVersion("1.3.0")]
+[assembly: MelonInfo(typeof(AlternativeParasitesAtMaxLvl.Main), "AlternativeParasitesAtMaxLvl", "1.3.0", "BaltaZar", null)]
 
 //This tells MelonLoader that the mod is only for The Long Dark.
 [assembly: MelonGame("Hinterland", "TheLongDark")]

@@ -1,5 +1,4 @@
 ﻿#nullable disable
-
 using HarmonyLib;
 using Il2Cpp;
 using MelonLoader;
@@ -8,21 +7,20 @@ using System;
 using System.IO;
 using UnityEngine;
 
-namespace TLD_Skill_Adjustment
+namespace AlternativeParasitesAtMaxLvl
 {
-    public class CookingParasiteRiskMod : MelonMod
+    public class Main : MelonMod
     {
         public override void OnInitializeMelon()
         {
             bool debug = File.Exists(Path.Combine(MelonEnvironment.UserDataDirectory, "AlternativeParasitesAtMaxLvl.debug"));
-            MelonLogger.Msg("=== Initializing Alternative Parasites at Max Level Mod ===");
 
-            TLD_Settings.OnLoad();
+            ParasitesSettings.OnLoad();
 
             if (debug)
                 MelonLogger.Msg("[DEBUG] Debug mode active.");
 
-            MelonLogger.Msg("=== Alternative Parasites at Max Level Mod initialized successfully ===");
+            MelonLogger.Msg("Alternative Parasites at Max Level Mod initialized");
         }
     }
 
@@ -68,7 +66,7 @@ namespace TLD_Skill_Adjustment
                 }
 
                 Skill_Cooking cookingSkill = GameManager.GetSkillCooking();
-                int cookingLevel = cookingSkill.GetCurrentTierNumber();
+                /*int cookingLevel = cookingSkill.GetCurrentTierNumber();
                 DebugLog($"[AlternativeParasitesAtMaxLvl] Cooking level: {cookingLevel}");
 
                 // Below level 5 → vanilla handles risk
@@ -76,7 +74,25 @@ namespace TLD_Skill_Adjustment
                 {
                     DebugLog("[AlternativeParasitesAtMaxLvl] Cooking level < 5, skipping (vanilla handles risk).");
                     return;
+                }*/
+                int cookingTier = cookingSkill.GetCurrentTierNumber();
+                int noParasitesTier = cookingSkill.m_LevelWhereNoParasitesOrFoodPoisoning - 1;
+
+                bool vanillaSkipsParasiteRisk = cookingTier >= noParasitesTier && !food.m_IsRawMeat;
+
+                DebugLog(
+                    $"[AlternativeParasitesAtMaxLvl] Cooking tier: {cookingTier}, " +
+                    $"no-parasites tier: {noParasitesTier}, raw meat: {food.m_IsRawMeat}, " +
+                    $"vanilla skips risk: {vanillaSkipsParasiteRisk}");
+
+                if (!vanillaSkipsParasiteRisk)
+                {
+                    DebugLog("[AlternativeParasitesAtMaxLvl] Vanilla handles parasite risk. Skipping custom risk.");
+                    return;
                 }
+
+                DebugLog("[AlternativeParasitesAtMaxLvl] Vanilla would skip parasite risk. Applying custom risk.");
+
 
                 IntestinalParasites parasites = GameManager.GetIntestinalParasitesComponent();
                 if (parasites == null) return;
@@ -96,7 +112,7 @@ namespace TLD_Skill_Adjustment
                 // --------------------------
                 // FIXED RISK MODE
                 // --------------------------
-                if (TLD_Settings.Instance.FixedRiskMode)
+                if (ParasitesSettings.Instance.FixedRiskMode)
                 {
                     if (!hasRisk)
                     {

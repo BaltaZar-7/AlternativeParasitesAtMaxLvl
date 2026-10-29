@@ -1,12 +1,11 @@
-﻿#nullable disable
-
+#nullable disable
 using ModSettings;
 
-namespace TLD_Skill_Adjustment
+namespace AlternativeParasitesAtMaxLvl
 {
-    internal class TLD_Settings : JsonModSettings
+    internal class ParasitesSettings : JsonModSettings
     {
-        public static TLD_Settings Instance { get; private set; }
+        public static ParasitesSettings Instance { get; private set; }
 
         [Section("Parasite Risk Options")]
         [Name("Fixed Risk Mode")]
@@ -26,7 +25,7 @@ namespace TLD_Skill_Adjustment
 
         public static void OnLoad()
         {
-            Instance = new TLD_Settings();
+            Instance = new ParasitesSettings();
             Instance.AddToModSettings("Alternative Parasites at Max Level");
         }
     }
